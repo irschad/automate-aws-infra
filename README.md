@@ -205,7 +205,7 @@ The project provides the following outputs:
 
 - Open the browser and navigate to http://<<public ip>>:8080 to see the NGINX welcome page.
 
-  Replace <public-ip> with the IP address displayed in the Terraform output.
+  Replace the <<public ip>> with the IP address displayed in the Terraform output.
 
 - SSH into the EC2 instance and verify the Docker container:
   ```bash
