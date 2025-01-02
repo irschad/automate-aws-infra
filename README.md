@@ -203,7 +203,7 @@ The project provides the following outputs:
 
 ## Validate the Setup
 
-- Open the browser and navigate to http://<public-ip>:8080 to see the NGINX welcome page.
+- Open the browser and navigate to http://<public ip>:8080 to see the NGINX welcome page.
 
   Replace <public-ip> with the IP address displayed in the Terraform output.
 
