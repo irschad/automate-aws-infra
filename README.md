@@ -24,53 +24,12 @@ The project consists of two main parts:
 ## Getting Started
 
 ### Prerequisites
-Ensure the following tools are installed on your local machine:
+Ensure the following tools are installed on the local machine:
 - Terraform (>= 1.0.0)
 - AWS CLI
 - Git
 - A valid AWS account with programmatic access
 
-### Setup Instructions
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/irschad/automate-aws-infra.git
-   cd automate-aws-infra
-   ```
-
-2. **Prepare Terraform Variables**:
-   Create a `terraform.tfvars` file and specify the following variables:
-   ```hcl
-   env_prefix = "dev"
-   avail_zone = "us-east-1a"
-   vpc_cidr_block = "10.0.0.0/16"
-   subnet_cidr_block = "10.0.10.0/24"
-   my_ip = "<your-ip-address/32>"
-   instance_type = "t2.micro"
-   public_key_location = "<path-to-your-public-key>"
-   ```
-
-3. **Initialize Terraform**:
-   ```bash
-   terraform init
-   ```
-
-4. **Plan and Apply Changes**:
-   To preview changes:
-   ```bash
-   terraform plan
-   ```
-   To apply changes:
-   ```bash
-   terraform apply --auto-approve
-   ```
-
-5. **Access the Application**:
-   Once the EC2 instance is running, retrieve its public IP:
-   ```bash
-   terraform output ec2_public_ip
-   ```
-   Open your browser and navigate to `http://<public-ip>:8080`. You should see the NGINX welcome page.
 
 ## Key Components
 
@@ -185,6 +144,47 @@ sudo usermod -aG docker ec2-user
 docker run -p 8080:80 nginx
 ```
 
+### Setup Instructions
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/irschad/automate-aws-infra.git
+   cd automate-aws-infra
+   ```
+
+2. **Prepare Terraform Variables**:
+   Create a `terraform.tfvars` file and specify the following variables:
+   ```hcl
+   env_prefix = "dev"
+   avail_zone = "us-east-1a"
+   vpc_cidr_block = "10.0.0.0/16"
+   subnet_cidr_block = "10.0.10.0/24"
+   my_ip = "<your-ip-address/32>"
+   instance_type = "t2.micro"
+   public_key_location = "<path-to-your-public-key>"
+   ```
+
+3. **Initialize Terraform**:
+   ```bash
+   terraform init
+   ```
+
+4. **Plan and Apply Changes**:
+   To preview changes:
+   ```bash
+   terraform plan
+   ```
+   To apply changes:
+   ```bash
+   terraform apply --auto-approve
+   ```
+
+5. **Access the Application**:
+   Once the EC2 instance is running, retrieve its public IP:
+   ```bash
+   terraform output ec2_public_ip
+   ```
+   
 ## Outputs
 The project provides the following outputs:
 - **AMI ID**:
@@ -200,9 +200,10 @@ The project provides the following outputs:
   }
   ```
 
+
 ## Validate the Setup
 
-- Open the browser and navigate to http://<public-ip>:8080. You should see the NGINX welcome page.
+- Open the browser and navigate to http://<public-ip>:8080 to see the NGINX welcome page.
 
   Replace <public-ip> with the IP address displayed in the Terraform output.
 
