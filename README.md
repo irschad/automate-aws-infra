@@ -3,7 +3,7 @@
 ## Project Overview
 This project demonstrates the automation of AWS infrastructure provisioning and Docker container deployment using Terraform. It simplifies the creation and management of essential AWS resources like VPCs, subnets, route tables, internet gateways, security groups, and EC2 instances, with the added functionality of deploying a containerized application.
 
-## Technologies Used
+## Technologies
 - **Terraform**: Infrastructure as Code (IaC) tool for automating AWS resource creation.
 - **AWS**: Cloud platform for deploying and hosting the infrastructure.
 - **Docker**: Containerization technology for deploying the application.
@@ -20,8 +20,6 @@ The project consists of two main parts:
    - Deploy a Docker container running an NGINX server to the provisioned EC2 instance.
    - Use Terraform scripts to execute custom startup scripts on the instance.
 
-## Repository Link
-Explore the project on GitHub: [Automate AWS Infrastructure](https://github.com/irschad/automate-aws-infra)
 
 ## Getting Started
 
